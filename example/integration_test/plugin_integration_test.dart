@@ -27,7 +27,7 @@ void main() {
     expect(terminateSuccessful, true);
 
     // now start it again
-    final bool startSuccessful = await Oewa.startSession();
+    final bool startSuccessful = await Oewa.startSession('test');
     expect(startSuccessful, true);
   });
 
@@ -44,7 +44,7 @@ void main() {
     expect(logSuccessful, false);
 
     // opt in again
-    await Oewa.optIn();
+    await Oewa.optIn('test');
 
     // log a page view
     //final bool logSuccessful1 = await Oewa.logEvent(OewaViewEvent.appeared());
@@ -64,7 +64,7 @@ void main() {
     expect(logSuccessful, false);
 
     // opt in again
-    await Oewa.optIn();
+    await Oewa.optIn('test');
 
     // log a page view should now work again
     final bool logSuccessful1 = await Oewa.logEvent(OewaViewEvent.appeared());

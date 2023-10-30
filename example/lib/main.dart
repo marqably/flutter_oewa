@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   // Initializes our OEWA tracking session
   Future<void> initOewa() async {
     // defines your unique vendor id (you get this from your OEWA account)
-    const offerIdentifier = 'at_a_ttcom';
+    const offerIdentifier = 'my_company_key';
 
     // defines whether debug messages should be logged for development
     const debugMode = true;
@@ -87,7 +87,7 @@ class _MyAppState extends State<MyApp> {
               if (_optOut == true)
                 ElevatedButton(
                   onPressed: () async {
-                    await Oewa.optIn();
+                    await Oewa.optIn('my_company_key');
 
                     final newOptOutState = await Oewa.getOptOutStatus();
 

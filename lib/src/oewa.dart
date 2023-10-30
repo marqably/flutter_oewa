@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'event_types/oewa_event.dart';
 import 'flutter_oewa_platform_interface.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -25,21 +23,12 @@ class Oewa {
       if (optOutState == true) {
         await optOut();
       } else {
-        await optIn();
+        await optIn(offerIdentifier);
       }
     }
 
     // if we want to check the opt in status, we check shared preferences for the opt in status
     if (privacyMode == true) {
-      // if we are in privacy mode, we might need some infos later, when restarting session -> so save them in shared preferences so we don't have to ask them again
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString(
-          sessionDetailsSharedPrefKey,
-          json.encode({
-            'offerIdentifier': offerIdentifier,
-            'debugMode': debugMode,
-          }));
-
       // if get opt out status is true -> don't do anything else
       if (await getOptOutStatus()) {
         return false;
@@ -52,18 +41,14 @@ class Oewa {
   }
 
   /// Starts a session to track and send events to the OEWA server.
-  static Future<bool> startSession() async {
+  static Future<bool> startSession(String offerIdentifier) async {
     if (await getOptOutStatus()) {
       return false;
     }
 
-    // get the offer Identifier from shared preferences
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final sessionDetails =
-        json.decode(prefs.getString(sessionDetailsSharedPrefKey) ?? '{}');
+    final res =
+        await FlutterOewaPlatform.instance.startSession(offerIdentifier);
 
-    final res = await FlutterOewaPlatform.instance
-        .startSession(sessionDetails['offerIdentifier']);
     return res == 'true';
   }
 
@@ -119,30 +104,15 @@ class Oewa {
   }
 
   /// Opts the user in again of tracking by resetting the opt out status in shared preferences and starting a new session
-  static Future<bool> optIn() async {
+  static Future<bool> optIn(String offerIdentifier) async {
     // now save the opt in status in shared preferences
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-    // if we have a session detail key (we probably did not start a session yet) -> init session with these details
-    if (prefs.containsKey(sessionDetailsSharedPrefKey)) {
-      final sessionDetails =
-          json.decode(prefs.getString(sessionDetailsSharedPrefKey) ?? '{}');
-
-      // start session with these data
-      await FlutterOewaPlatform.instance.initIOLSession(
-        sessionDetails['offerIdentifier'],
-        sessionDetails['debugMode'],
-      );
-
-      // remove session detail key in shared prefs
-      await prefs.remove(sessionDetailsSharedPrefKey);
-    }
 
     // remove the opt out state "cookkie"
     await prefs.remove(optOutSharedPrefKey);
 
     // start a new session
-    return await startSession();
+    return await startSession(offerIdentifier);
   }
 
   /// Returns the current opt out status

@@ -78,7 +78,7 @@ void main() {
           MockFlutterOewaPlatformPositive();
       FlutterOewaPlatform.instance = fakePlatform;
 
-      expect(await Oewa.startSession(), true);
+      expect(await Oewa.startSession('test'), true);
     });
 
     test('terminateSession returns a positive result', () async {
@@ -129,7 +129,7 @@ void main() {
           MockFlutterOewaPlatformNegative();
       FlutterOewaPlatform.instance = fakePlatform;
 
-      expect(await Oewa.startSession(), false);
+      expect(await Oewa.startSession('test'), false);
     });
 
     test('terminateSession returns a negative result', () async {
@@ -247,7 +247,7 @@ void main() {
       expect(await Oewa.logEvent(OewaViewEvent.appeared()), false);
 
       // opt in again
-      await Oewa.optIn();
+      await Oewa.optIn('test');
 
       // event is tracked successfully
       expect(await Oewa.logEvent(OewaViewEvent.appeared()), true);
@@ -267,7 +267,7 @@ void main() {
       expect(await Oewa.getOptOutStatus(), true);
 
       // now opt in again and check
-      await Oewa.optIn();
+      await Oewa.optIn('test');
       expect(await Oewa.getOptOutStatus(), false);
     });
   });

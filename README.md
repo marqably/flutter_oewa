@@ -198,14 +198,14 @@ Oewa.terminateSession();
 
 ### Start a session
 
-If the active session of the IOLib was terminated explicitly, it can be re-started at any time with `startSession()`. Re-initialisation is not necessary.
+If the active session of the IOLib was terminated explicitly, it can be re-started at any time with `startSession(String offerIdentifier)`. Re-initialisation is not necessary.
 
 ```dart
 import 'flutter_oewa/flutter_oewa.dart';
 
 ...
 
-Oewa.startSession();
+Oewa.startSession(String offerIdentifier);
 ```
 
 ## GDPR compliant implementation
