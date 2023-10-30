@@ -17,37 +17,40 @@ public class FlutterOewaPlugin: NSObject, FlutterPlugin {
     case "initIOLSession":
       let offerIdentifier = args?["offerIdentifier"] as! String
       let debugMode = args?["debugMode"] as? Bool
-
       // set debug level
-      setDebugLevel(enable: true)
+      if (debugMode != nil && debugMode == true) {
+        setDebugLevel(enable: true);
+      }
 
       // start the session
-      result(
-        IOLSession.defaultSession(for: .OEWA).start(
-          withOfferIdentifier: offerIdentifier, privacyType: .LIN))
+      IOLSession.defaultSession(for: .OEWA).start(withOfferIdentifier: offerIdentifier, privacyType: .LIN)
+        
+      result("true")
 
     // startSession
     case "startSession":
       let offerIdentifier = args?["offerIdentifier"] as! String
 
       // start the session
-      result(
-        IOLSession.defaultSession(for: .OEWA).start(
-          withOfferIdentifier: offerIdentifier, privacyType: .LIN))
+      IOLSession.defaultSession(for: .OEWA).start(withOfferIdentifier: offerIdentifier, privacyType: .LIN)
+      result("true")
 
     // terminateSession
     case "terminateSession":
-      result(IOLSession.defaultSession(for: .OEWA).terminateSession())
+      IOLSession.defaultSession(for: .OEWA).terminateSession()
+      result("true")
 
     // sendLoggedEvents
     case "sendLoggedEvents":
-      result(IOLSession.defaultSession(for: .OEWA).sendLoggedEvents())
+      IOLSession.defaultSession(for: .OEWA).sendLoggedEvents()
+      result("true")
 
     // setDebugModeEnabled
     case "setDebugModeEnabled":
       let enable = args?["enable"] as! Bool
 
-      return result(setDebugLevel(enable: enable))
+      setDebugLevel(enable: enable)
+      result("true")
 
     // logEvent
     case "logEvent":
@@ -67,9 +70,10 @@ public class FlutterOewaPlugin: NSObject, FlutterPlugin {
 
       // call it
       if event != nil {
-        result(IOLSession.defaultSession(for: .OEWA).logEvent(event!))
+        IOLSession.defaultSession(for: .OEWA).logEvent(event!)
+        result("true")
       } else {
-        result(false)
+        result("false")
       }
 
     default:
@@ -78,8 +82,8 @@ public class FlutterOewaPlugin: NSObject, FlutterPlugin {
   }
 
   /**
-          * Depending on the enable parameter, it will enable or disable the debug logging
-     */
+   * Depending on the enable parameter, it will enable or disable the debug logging
+   */
   private func setDebugLevel(enable: Bool) {
     if enable {
       return IOLLogging.setDebugLogLevel(.trace)
