@@ -143,7 +143,6 @@ Oewa.logEvent(
 | BackgroundTask             | OewaBackgroundTaskEvent    | start, end                                                       |
 | Data                       | OewaDataEvent              | cancelled, refresh, succeeded, failed                            |
 | DeviceOrientation          | OewaDeviceOrientationEvent | changed                                                          |
-| Document                   | OewaDocumentEvent          | open, edit, close                                                |
 | Download                   | OewaDownloadEvent          | cancelled, start, succeeded, failed                              |
 | Game                       | OewaGameEvent              | action, started, finished, won, lost, highscore, achievement     |
 | Gesture                    | OewaGestureEvent           | shake                                                            |
@@ -151,8 +150,8 @@ Oewa.logEvent(
 | IAP                        | OewaIAPEvent               | started, finished, cancelled                                     |
 | Login                      | OewaLoginEvent             | succeeded, failed, logout                                        |
 | OpenApp                    | OewaOpenAppEvent           | maps, other                                                      |
-| Pus                        | OewaPushvent               | received                                                         |
-| Uploa                      | OewaUploadvent             | cancelled, start, succeeded, failed                              |
+| Push                       | OewaPushEvent              | received                                                         |
+| Upload                     | OewaUploadEvent            | cancelled, start, succeeded, failed                              |
 | Video                      | OewaVideoEvent             | play, pause, stop, next, previous, replay, seekBack, seekForward |
 | View                       | OewaViewEvent              | appeared, refreshed, disappeared                                 |
 
