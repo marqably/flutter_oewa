@@ -66,7 +66,15 @@ object EventHelper {
                     return IOLAudioEvent(type, category, comment, customParams)
                 }
             }
-        } else if (eventIdentifier == IOLBackgroundTaskEvent.eventIdentifier) {
+        } else
+        
+        
+        
+        
+        
+        
+        
+        if (eventIdentifier == IOLBackgroundTaskEvent.eventIdentifier) {
             for (type in IOLBackgroundTaskEventType.values()) {
                 if (type.state.equals(eventState, ignoreCase = true)) {
                     return IOLBackgroundTaskEvent(type, category, comment, customParams)
@@ -102,7 +110,19 @@ object EventHelper {
                     return IOLGameEvent(type, category, comment, customParams)
                 }
             }
-        } else if (eventIdentifier == IOLGestureEvent.eventIdentifier) {
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        else if (eventIdentifier == IOLGestureEvent.eventIdentifier) {
             for (type in IOLGestureEventType.values()) {
                 if (type.state.equals(eventState, ignoreCase = true)) {
                     return IOLGestureEvent(type, category, comment, customParams)

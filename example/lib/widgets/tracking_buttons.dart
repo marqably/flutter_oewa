@@ -12,7 +12,7 @@ class TrackingButtons extends StatelessWidget {
         OutlinedButton(
           onPressed: () {
             Oewa.logEvent(
-              OewaViewEvent.appeared(category: 'article'),
+              OewaAdvertisementEvent.open(category: 'article'),
             );
           },
           child: const Text('Track View'),

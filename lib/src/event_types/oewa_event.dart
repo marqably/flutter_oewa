@@ -14,3 +14,23 @@ class OewaEvent {
     this.customParams,
   });
 }
+
+const oewaEventIdentifierMap = {
+  "advertisement": "IOLAdvertisementEvent",
+  "audio": "IOLAudioEvent",
+  "background_task": "IOLBackgroundTaskEvent",
+  "data": "IOLDataEvent",
+  "device_orientation": "IOLDeviceOrientationEvent",
+  "document": "IOLDocumentEvent",
+  "download": "IOLDownloadEvent",
+  "game": "IOLGameEvent",
+  "gesture": "IOLGestureEvent",
+  "hardware_button": "IOLHardwareButtonEvent",
+  "iap": "IOLIAPEvent",
+  "login": "IOLLoginEvent",
+  "open_app": "IOLOpenAppEvent",
+  "push": "IOLPushEvent",
+  "upload": "IOLUploadEvent",
+  "video": "IOLVideoEvent",
+  "view": "IOLViewEvent",
+};

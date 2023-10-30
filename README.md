@@ -145,7 +145,7 @@ Oewa.logEvent(
 | DeviceOrientation          | OewaDeviceOrientationEvent | changed                                                          |
 | Document                   | OewaDocumentEvent          | open, edit, close                                                |
 | Download                   | OewaDownloadEvent          | cancelled, start, succeeded, failed                              |
-| Game                       | OewaGameEvent              | action, start, finished, won, lost, highscore, achievement       |
+| Game                       | OewaGameEvent              | action, started, finished, won, lost, highscore, achievement     |
 | Gesture                    | OewaGestureEvent           | shake                                                            |
 | HardwareButton             | OewaHardwareButtonEvent    | pushed                                                           |
 | IAP                        | OewaIAPEvent               | started, finished, cancelled                                     |
