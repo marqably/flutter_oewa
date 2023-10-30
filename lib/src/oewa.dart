@@ -57,7 +57,13 @@ class Oewa {
       return false;
     }
 
-    final res = await FlutterOewaPlatform.instance.startSession();
+    // get the offer Identifier from shared preferences
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final sessionDetails =
+        json.decode(prefs.getString(sessionDetailsSharedPrefKey) ?? '{}');
+
+    final res = await FlutterOewaPlatform.instance
+        .startSession(sessionDetails['offerIdentifier']);
     return res == 'true';
   }
 

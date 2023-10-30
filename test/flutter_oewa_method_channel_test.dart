@@ -28,7 +28,7 @@ void main() {
   });
 
   test('startSession', () async {
-    expect(await platform.startSession(), 'true');
+    expect(await platform.startSession('test'), 'true');
   });
 
   test('terminateSession', () async {

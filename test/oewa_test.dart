@@ -13,7 +13,7 @@ class MockFlutterOewaPlatformPositive
       Future.value('true');
 
   @override
-  Future<String?> startSession() => Future.value('true');
+  Future<String?> startSession(String? offerIdentifier) => Future.value('true');
 
   @override
   Future<String?> terminateSession() => Future.value('true');
@@ -37,7 +37,8 @@ class MockFlutterOewaPlatformNegative
       Future.value('false');
 
   @override
-  Future<String?> startSession() => Future.value('false');
+  Future<String?> startSession(String? offerIdentifier) =>
+      Future.value('false');
 
   @override
   Future<String?> terminateSession() => Future.value('false');

@@ -30,7 +30,7 @@ abstract class FlutterOewaPlatform extends PlatformInterface {
   }
   
   /// Starts a session to track and send events to the OEWA server.
-  Future<String?> startSession() {
+  Future<String?> startSession(String? offerIdentifier) {
     throw UnimplementedError('startSession() has not been implemented.');
   }
   

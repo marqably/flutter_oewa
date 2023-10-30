@@ -22,8 +22,12 @@ class MethodChannelFlutterOewa extends FlutterOewaPlatform {
   }
 
   @override
-  Future<String?> startSession() {
-    return methodChannel.invokeMethod<String>('startSession');
+  Future<String?> startSession(String? offerIdentifier) {
+    var map = <dynamic, dynamic>{
+      'offerIdentifier': offerIdentifier,
+    };
+
+    return methodChannel.invokeMethod<String>('startSession', map);
   }
 
   @override
