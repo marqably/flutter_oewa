@@ -4,8 +4,10 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v2
       - name: Install Flutter
@@ -22,8 +24,6 @@ jobs:
         run: dart format --fix .
       - name: Check Publish Warnings
         run: dart pub publish --dry-runn
-  publish:
-    permissions:
-      id-token: write
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+      - name: Publish
+        run: dart pub publish --force
 
