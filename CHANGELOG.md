@@ -6,4 +6,8 @@
 
 ## 1.0.1
 
-* Add github workflow and improve code
+* Code optimizations & added github workflow
+
+## 1.0.2
+
+* Improve pub.dev stats for package by providing more infos

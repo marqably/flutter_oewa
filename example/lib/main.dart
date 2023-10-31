@@ -37,7 +37,6 @@ class _MyAppState extends State<MyApp> {
     await Oewa.initIOLSession(
       offerIdentifier,
       debugMode: debugMode,
-
       optOutState: false,
       privacyMode: true,
     );
