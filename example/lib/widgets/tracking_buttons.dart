@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_oewa/flutter_oewa.dart';
 
 class TrackingButtons extends StatelessWidget {
-  const TrackingButtons({Key? key}) : super(key: key);
+  const TrackingButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
