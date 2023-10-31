@@ -21,6 +21,6 @@ jobs:
       - name: Format code
         run: dart format --fix .
       - name: Check Publish Warnings
-        run: dart pub publish --dry-runname: Publish to pub.dev
+        run: dart pub publish --dry-runn
   publish:
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
