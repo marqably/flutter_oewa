@@ -14,7 +14,6 @@ class OewaUploadvent extends OewaEvent {
           comment: comment,
           customParams: customParams,
         );
-        
 
   OewaUploadvent.start({
     String? category,
@@ -28,7 +27,6 @@ class OewaUploadvent extends OewaEvent {
           comment: comment,
           customParams: customParams,
         );
-        
 
   OewaUploadvent.succeeded({
     String? category,
@@ -42,7 +40,6 @@ class OewaUploadvent extends OewaEvent {
           comment: comment,
           customParams: customParams,
         );
-        
 
   OewaUploadvent.failed({
     String? category,
@@ -56,5 +53,4 @@ class OewaUploadvent extends OewaEvent {
           comment: comment,
           customParams: customParams,
         );
-        
 }

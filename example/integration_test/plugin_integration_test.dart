@@ -5,7 +5,7 @@ import 'package:flutter_oewa/flutter_oewa.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Test all methods', (WidgetTester tester) async {      
+  testWidgets('Test all methods', (WidgetTester tester) async {
     // create an oewa session
     final bool initSuccessful = await Oewa.initIOLSession('test');
     expect(initSuccessful, true);
