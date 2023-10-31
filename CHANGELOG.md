@@ -11,3 +11,7 @@
 ## 1.0.2
 
 * Improve pub.dev stats for package by providing more infos
+
+## 1.0.3
+
+* Minor Code improvements
