@@ -54,132 +54,116 @@ object EventHelper {
         val eventSplit = eventname.split("\\.".toRegex(), limit = 2).toTypedArray()
         val eventIdentifier = eventSplit[0]
         val eventState = eventSplit[1]
-        if (eventIdentifier == IOLAdvertisementEvent.eventIdentifier) {
-            for (type in IOLAdvertisementEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLAdvertisementEvent(type, category, comment, customParams)
+
+        when(eventIdentifier) {
+            IOLAdvertisementEvent.eventIdentifier ->
+                for (type in IOLAdvertisementEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLAdvertisementEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLAudioEvent.eventIdentifier) {
-            for (type in IOLAudioEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLAudioEvent(type, category, comment, customParams)
+            IOLAudioEvent.eventIdentifier ->
+                for (type in IOLAudioEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLAudioEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else
-        
-        
-        
-        
-        
-        
-        
-        if (eventIdentifier == IOLBackgroundTaskEvent.eventIdentifier) {
-            for (type in IOLBackgroundTaskEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLBackgroundTaskEvent(type, category, comment, customParams)
+            IOLBackgroundTaskEvent.eventIdentifier ->
+                for (type in IOLBackgroundTaskEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLBackgroundTaskEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLDataEvent.eventIdentifier) {
-            for (type in IOLDataEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLDataEvent(type, category, comment, customParams)
+            IOLDataEvent.eventIdentifier ->
+                for (type in IOLDataEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLDataEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLDeviceOrientationEvent.eventIdentifier) {
-            for (type in IOLDeviceOrientationEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLDeviceOrientationEvent(type, category, comment, customParams)
+            IOLDeviceOrientationEvent.eventIdentifier ->
+                for (type in IOLDeviceOrientationEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLDeviceOrientationEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLDocumentEvent.eventIdentifier) {
-            for (type in IOLDocumentEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLDocumentEvent(type, category, comment, customParams)
+            IOLDocumentEvent.eventIdentifier ->
+                for (type in IOLDocumentEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLDocumentEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLDownloadEvent.eventIdentifier) {
-            for (type in IOLDownloadEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLDownloadEvent(type, category, comment, customParams)
+            IOLDownloadEvent.eventIdentifier ->
+                for (type in IOLDownloadEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLDownloadEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLGameEvent.eventIdentifier) {
-            for (type in IOLGameEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLGameEvent(type, category, comment, customParams)
+            IOLGameEvent.eventIdentifier ->
+                for (type in IOLGameEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLGameEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        else if (eventIdentifier == IOLGestureEvent.eventIdentifier) {
-            for (type in IOLGestureEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLGestureEvent(type, category, comment, customParams)
+            IOLGestureEvent.eventIdentifier ->
+                for (type in IOLGestureEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLGestureEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLHardwareButtonEvent.eventIdentifier) {
-            for (type in IOLHardwareButtonEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLHardwareButtonEvent(type, category, comment, customParams)
+            IOLHardwareButtonEvent.eventIdentifier ->
+                for (type in IOLHardwareButtonEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLHardwareButtonEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLIAPEvent.eventIdentifier) {
-            for (type in IOLIAPEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLIAPEvent(type, category, comment, customParams)
+            IOLIAPEvent.eventIdentifier ->
+                for (type in IOLIAPEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLIAPEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLLoginEvent.eventIdentifier) {
-            for (type in IOLLoginEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLLoginEvent(type, category, comment, customParams)
+            IOLLoginEvent.eventIdentifier ->
+                for (type in IOLLoginEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLLoginEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLOpenAppEvent.eventIdentifier) {
-            for (type in IOLOpenAppEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLOpenAppEvent(type, category, comment, customParams)
+            IOLOpenAppEvent.eventIdentifier ->
+                for (type in IOLOpenAppEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLOpenAppEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLPushEvent.eventIdentifier) {
-            for (type in IOLPushEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLPushEvent(type, category, comment, customParams)
+            IOLPushEvent.eventIdentifier ->
+                for (type in IOLPushEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLPushEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLUploadEvent.eventIdentifier) {
-            for (type in IOLUploadEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLUploadEvent(type, category, comment, customParams)
+            IOLUploadEvent.eventIdentifier ->
+                for (type in IOLUploadEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLUploadEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLViewEvent.eventIdentifier) {
-            for (type in IOLViewEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLViewEvent(type, category, comment, customParams)
+            IOLViewEvent.eventIdentifier ->
+                for (type in IOLViewEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLViewEvent(type, category, comment, customParams)
+                    }
                 }
-            }
-        } else if (eventIdentifier == IOLVideoEvent.eventIdentifier) {
-            for (type in IOLVideoEventType.values()) {
-                if (type.state.equals(eventState, ignoreCase = true)) {
-                    return IOLVideoEvent(type, category, comment, customParams)
+            IOLVideoEvent.eventIdentifier ->
+                for (type in IOLVideoEventType.values()) {
+                    if (type.state.equals(eventState, ignoreCase = true)) {
+                        return IOLVideoEvent(type, category, comment, customParams)
+                    }
                 }
+            IOLCustomEvent.eventIdentifier ->
+                return IOLCustomEvent(eventState, category, comment, customParams)
+            
+            else -> {
+                return IOLCustomEvent(eventState, category, comment, customParams)
             }
-        } else if (eventIdentifier == IOLCustomEvent.eventIdentifier) {
-            return IOLCustomEvent(eventState, category, comment, customParams)
-        } else {
-            Log.e("OEWA EventHelper", "Could not create OEWA event from identifier  Has to be one of the predefined types: advertisement, audio, backgroundTask, cstom, data, deviceOrientation, document, download, game, gesture, hardwareButton, iAP, login, openApp, push, upload, video, view")
         }
 
         Log.e("OEWA EventHelper", "unknown state for identifier: $eventname")
