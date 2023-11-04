@@ -15,3 +15,7 @@
 ## 1.0.3
 
 * Minor Code improvements
+
+## 1.0.4
+
+* Fix bug on android, where events are always logged

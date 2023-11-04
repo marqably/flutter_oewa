@@ -138,8 +138,6 @@ class FlutterOewaPlugin: FlutterPlugin, MethodCallHandler {
   * This is the most important method in this package, because this allows us to set up the tracking and analyse user actions.
   **/
   private fun logEvent(identifier: String, state: String?, category: String?, comment: String?, customParams: Map<String?, String?>?): String {
-    IOLSession.setDebugModeEnabled(true);
-
     // generate event object
     val eventInstance: IOLEvent? = getIOLEventFromString(
       "$identifier.$state",
