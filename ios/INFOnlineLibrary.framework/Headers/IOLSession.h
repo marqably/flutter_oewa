@@ -5,13 +5,9 @@
 //  Copyright 2010 RockAByte. All rights reserved.
 //
 
-#if __has_feature(modules)
-@import Foundation;
-#else
 #import <Foundation/Foundation.h>
-#endif
 
-#import "IOLEnvironment.h"
+#import <INFOnlineLibrary/IOLEnvironment.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -241,6 +237,36 @@ typedef NS_ENUM(NSUInteger, IOLSessionType) {
  */
 - (void)sendLoggedEvents;
 
+/// @name TCF2.0
+
+/**
+ The TCF2.0 consent.
+ 
+ @return The current session's consent value.
+ */
+- (nullable NSString*)consent;
+
+/**
+ Updates the current session's TCF2.0 custom consent.
+ 
+ @note This value will not be used if automatic processing is active.
+ @param consent The new custom consent value to use.
+ */
+- (void)setCustomConsent:(NSString*)consent;
+
+/**
+ The customer consent force flag.
+
+ @return Flag if custom consent shall be enforced.
+ */
+- (BOOL)getForceCustomConsentUsage;
+
+/**
+ Updates the customer consent force flag.
+
+ @param forceCustomConsentUsage The new customer consent force flag.
+ */
+- (void)setForceCustomConsentUsage:(BOOL)forceCustomConsentUsage;
 
 @end
 

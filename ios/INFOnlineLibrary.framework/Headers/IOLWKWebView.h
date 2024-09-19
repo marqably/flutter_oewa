@@ -6,13 +6,9 @@
 //  Copyright (c) 2015 RockAByte GmbH. All rights reserved.
 //
 
-#import "IOLEnvironment.h"
+#import <INFOnlineLibrary/IOLEnvironment.h>
 
-#if __has_feature(modules)
-@import WebKit;
-#else
 #import <WebKit/WebKit.h>
-#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
