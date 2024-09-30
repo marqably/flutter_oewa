@@ -1,0 +1,57 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "INFOnlineLibrary",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/Shared\/workspace\/INFOnline\/(IP INFOnline) Build_Branch_RELEASE\/INFOnlineLibrary\/Common\/IOLIABValidator.swift",
+      "kind": "IntegerLiteral",
+      "offset": 264,
+      "length": 3,
+      "value": "730"
+    },
+    {
+      "filePath": "\/Users\/Shared\/workspace\/INFOnline\/(IP INFOnline) Build_Branch_RELEASE\/INFOnlineLibrary\/Common\/IOLIABValidator.swift",
+      "kind": "FloatLiteral",
+      "offset": 318,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/Shared\/workspace\/INFOnline\/(IP INFOnline) Build_Branch_RELEASE\/INFOnlineLibrary\/Common\/IOLIABValidator.swift",
+      "kind": "FloatLiteral",
+      "offset": 323,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/Shared\/workspace\/INFOnline\/(IP INFOnline) Build_Branch_RELEASE\/INFOnlineLibrary\/Common\/IOLIABValidator.swift",
+      "kind": "FloatLiteral",
+      "offset": 334,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/Shared\/workspace\/INFOnline\/(IP INFOnline) Build_Branch_RELEASE\/INFOnlineLibrary\/Common\/IOLIABValidator.swift",
+      "kind": "FloatLiteral",
+      "offset": 339,
+      "length": 3,
+      "value": "7.0"
+    }
+  ]
+}
