@@ -1,6 +1,6 @@
 name: flutter_oewa
 description: A flutter package wrapper around the OEWA Android and iOS SDKs.
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/marqably/flutter_oewa
 
 environment:
