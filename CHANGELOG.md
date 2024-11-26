@@ -19,3 +19,11 @@
 ## 1.0.4
 
 * Fix bug on android, where events are always logged
+
+## 1.0.5
+
+* Minor bugfix and sdk upgrade
+
+## 1.0.6
+
+* Update native OEWA SDK to v2.6.0
