@@ -5,11 +5,7 @@
 //  Copyright © 2017 RockAByte GmbH. All rights reserved.
 //
 
-#if __has_feature(modules)
-@import UIKit;
-#else
 #import <UIKit/UIKit.h>
-#endif
 
 /// Project version number for INFOnlineLibrary.
 FOUNDATION_EXPORT double INFOnlineLibraryVersionNumber;

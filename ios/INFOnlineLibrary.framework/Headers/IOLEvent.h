@@ -6,11 +6,7 @@
 //  Copyright (c) 2012 RockAByte GmbH. All rights reserved.
 //
 
-#if __has_feature(modules)
-@import Foundation;
-#else
 #import <Foundation/Foundation.h>
-#endif
 
 /**
  IOLEvent represents one event you can log and send to the IOL servers via an IOLSession object.
