@@ -27,3 +27,7 @@
 ## 1.0.6
 
 * Update native OEWA SDK to v2.6.0
+
+## 1.0.7
+
+* Fix native iOS OEWA SDK integration
