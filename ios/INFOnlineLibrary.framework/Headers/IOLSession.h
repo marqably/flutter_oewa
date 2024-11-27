@@ -254,20 +254,6 @@ typedef NS_ENUM(NSUInteger, IOLSessionType) {
  */
 - (void)setCustomConsent:(NSString*)consent;
 
-/**
- The customer consent force flag.
-
- @return Flag if custom consent shall be enforced.
- */
-- (BOOL)getForceCustomConsentUsage;
-
-/**
- Updates the customer consent force flag.
-
- @param forceCustomConsentUsage The new customer consent force flag.
- */
-- (void)setForceCustomConsentUsage:(BOOL)forceCustomConsentUsage;
-
 @end
 
 NS_ASSUME_NONNULL_END
