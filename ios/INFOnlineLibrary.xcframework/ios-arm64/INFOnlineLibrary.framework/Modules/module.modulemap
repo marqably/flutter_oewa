@@ -1,0 +1,11 @@
+framework module INFOnlineLibrary {
+  umbrella header "INFOnlineLibrary.h"
+  export *
+
+  module * { export * }
+}
+
+module INFOnlineLibrary.Swift {
+  header "INFOnlineLibrary-Swift.h"
+  requires objc
+}
