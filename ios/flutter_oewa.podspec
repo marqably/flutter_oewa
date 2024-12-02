@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.preserve_paths = 'INFOnlineLibrary.framework/**/*'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-framework INFOnlineLibrary' }
-  s.vendored_frameworks = 'INFOnlineLibrary.framework'
+  s.vendored_frameworks = 'INFOnlineLibrary.xcframework'
     
   # fix for simulator on intel mac not working
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
