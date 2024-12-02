@@ -31,3 +31,7 @@
 ## 1.0.7
 
 * Fix native iOS OEWA SDK integration
+
+## 1.0.8
+
+* Fix native iOS Simulator OEWA SDK integration
