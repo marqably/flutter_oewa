@@ -35,3 +35,7 @@
 ## 1.0.8
 
 * Fix native iOS Simulator OEWA SDK integration
+
+## 1.0.9
+
+* Update Android SDK to v2.5.0
