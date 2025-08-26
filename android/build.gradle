@@ -74,9 +74,10 @@ android {
 
 dependencies {
     // implement google play services to get ad id
-    implementation 'com.google.android.gms:play-services-ads-identifier:15.0.1'
-    implementation 'com.google.android.gms:play-services-base:15.0.1'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
+    implementation 'com.google.android.gms:play-services-base:18.1.0'
 
     // implement the oewa library
-    implementation (name: 'infonlinelib_2.1.2', ext: 'aar')
+    implementation (name: 'infonlinelib_2.5.0', ext: 'aar')
 }
+
